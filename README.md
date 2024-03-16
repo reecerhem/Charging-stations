@@ -4,6 +4,14 @@ The goal is to develop an application that, given a starting point in a network 
 4 charging stations), finds the shortest path to each charging station and recommends the most
 efficient route based on distance and other relevant factors.
 
+How the code works
+
+Run the code
+Enter a char from A to V to find the closest charging station [H,K,Q,T]
+The output will list all the charging stations close to the the char entered, along with direction to the station.
+If you would like to find another station, press enter and enter 'Y' indicating that you would and press enter
+You can then enter another letter to find the closes station to it. This will continue until the user enters 'N' which ends the code.
+
 1. Understanding the Problem
    - Understand the problem statement: The problem involves finding the shortest paths from a starting point to various destination points in a graph.
    - Identify the data requirements: The algorithm requires a graph representation and starting/destination points.
@@ -52,3 +60,8 @@ efficient route based on distance and other relevant factors.
 10. Continuous Improvement
    - Gather feedback: Collect feedback from users and stakeholders to identify areas for improvement.
    - Iterate: Incorporate feedback and suggestions to enhance the functionality, usability, and performance of the code.
+
+
+
+
+
