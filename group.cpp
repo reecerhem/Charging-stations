@@ -1,6 +1,12 @@
-#include <vector>
-#include <iostream>
-#include <fstream>
+#include <vector> //Store data in dynamic arrays
+#include <iostream> //Perform console input & output operation
+#include <fstream> //Read data from a file
+#include <cctype> //use isalpha function (to determine if char is alpha lower or uppercase)
+
+/*Name: Sherice Morris & Chris Polak (Group 37)
+Course: Algorithms and Data Structure
+Due date: March 30, 2024
+Description: This code will locate the shortest path to an EV charging station*/
 
 using namespace std;
 // Number of vertices in the graph
@@ -28,7 +34,7 @@ int charToInt(char c) {
         return c - 'A';
     }
     else {
-        cout << "Invalid input. Please enter a character between 'a' and 'z' or 'A' and 'Z'." << endl;
+        cout << "Invalid input. Please enter a character between 'a' and 'w' or 'A' and 'W'." << endl;
         // Handle the error by returning a default value or asking for input again
 
         return -1;
@@ -130,6 +136,15 @@ int main()
         if (choice == 'y' || choice == 'Y' || choice == '\0') {
             cout << "Choose Starting Point Location Letter: \n";
             cin >> choice;
+
+            // Validate user input
+            if (!isalpha(choice)) {
+                cout << "Invalid input. Please enter a character between 'a' and 'z' or 'A' and 'Z'." << endl;
+                continue; // Restart the loop to prompt user again
+            }
+
+            choice = tolower(choice); // Convert to lowercase
+
             for (char c : stations) { //Runs the algorithm for each charging station
                 cout << "Shortest Path to Charging Station " << char(toupper(c)) << " is: ";
                 shortestPath(map, charToInt(choice), charToInt(c));
